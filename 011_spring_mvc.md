@@ -211,7 +211,7 @@ Questa annotazione viene utilizzata a livello di classe. L'annotazione `@RestCon
 ## @RestControllerAdvice
 
 
-Questa annotazione viene applicata alle classi Java. @RestControllerAdvice `è un'annotazione pratica che combina` @ControllerAdvice `e @ResponseBody. Questa annotazione viene utilizzata insieme all'annotazione `@ExceptionHandler` per gestire le eccezioni che si verificano all'interno del controller.
+Questa annotazione viene applicata alle classi Java. `@RestControllerAdvice` è un'annotazione pratica che combina `@ControllerAdvice`e `@ResponseBody`. Questa annotazione viene utilizzata insieme all'annotazione `@ExceptionHandler` per gestire le eccezioni che si verificano all'interno del controller.
 
 ---
 
