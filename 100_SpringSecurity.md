@@ -79,7 +79,7 @@ Allo stesso modo, questo funzionerà se utilizziamo l'autenticazione **JDBC** o 
 
 ### 2.2. Configurare la Sicurezza HTTP
 
-Più importante, se vogliamo evitare la deprecazione per la sicurezza HTTP, possiamo creare un bean `SecurityFilterChain`. Ad esempio, supponiamo di voler proteggere gli endpoint a seconda dei ruoli, lasciando un punto di ingresso anonimo solo per il login. Restringeremo anche qualsiasi richiesta di eliminazione al ruolo di amministratore. Utilizzeremo l'**Autenticazione Basic**:
+Per evitare la deprecazione per la sicurezza HTTP, possiamo creare un bean `SecurityFilterChain`. Ad esempio, supponiamo di voler proteggere gli endpoint a seconda dei ruoli, lasciando un punto di ingresso anonimo solo per il login. Restringeremo anche qualsiasi richiesta di eliminazione al ruolo di amministratore. Utilizzeremo l'**Autenticazione Basic**:
 
 ```java
 @Bean

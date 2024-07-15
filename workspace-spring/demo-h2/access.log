@@ -663,3 +663,7 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 2024-07-15T10:53:58.120+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
 2024-07-15T10:53:58.422+02:00 ERROR 5442 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : errore
 2024-07-15T10:53:58.423+02:00  WARN 5442 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : warning
+2024-07-15T10:55:00.112+02:00  INFO 5442 --- [demo-h2] [RMI TCP Connection(29)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-07-15T10:55:00.124+02:00  INFO 5442 --- [demo-h2] [RMI TCP Connection(29)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:55:00.126+02:00  INFO 5442 --- [demo-h2] [RMI TCP Connection(29)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-07-15T10:55:00.146+02:00  INFO 5442 --- [demo-h2] [RMI TCP Connection(29)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
