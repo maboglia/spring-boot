@@ -1,34 +1,665 @@
-2024-07-14T22:01:31.711+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 6673 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
-2024-07-14T22:01:31.728+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
-2024-07-14T22:01:31.899+02:00  INFO 6673 --- [demo-h2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-14T22:01:31.900+02:00  INFO 6673 --- [demo-h2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-14T22:01:33.993+02:00  INFO 6673 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-14T22:01:34.051+02:00  INFO 6673 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
-2024-07-14T22:01:35.783+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-14T22:01:35.830+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-14T22:01:35.848+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-14T22:01:35.973+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-14T22:01:35.974+02:00  INFO 6673 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4052 ms
-2024-07-14T22:01:36.077+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-14T22:01:36.613+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/fileDB user=SA
-2024-07-14T22:01:36.621+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-14T22:01:36.750+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
-2024-07-14T22:01:37.192+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-14T22:01:37.341+02:00  INFO 6673 --- [demo-h2] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-14T22:01:37.410+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-14T22:01:37.864+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-14T22:01:38.438+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-14T22:01:38.448+02:00  INFO 6673 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-14T22:01:38.577+02:00  WARN 6673 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-14T22:01:39.358+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-14T22:01:39.445+02:00  INFO 6673 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-14T22:01:39.469+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 8.772 seconds (process running for 10.682)
-2024-07-14T22:01:48.877+02:00  INFO 6673 --- [demo-h2] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-14T22:01:48.894+02:00  INFO 6673 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-14T22:01:48.903+02:00  INFO 6673 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-14T22:01:49.183+02:00 ERROR 6673 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : errore
-2024-07-14T22:01:49.188+02:00  WARN 6673 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : warning
-2024-07-14T22:01:50.275+02:00 ERROR 6673 --- [demo-h2] [http-nio-8080-exec-3] com.maboglia.controller.Router           : errore
-2024-07-14T22:01:50.277+02:00  WARN 6673 --- [demo-h2] [http-nio-8080-exec-3] com.maboglia.controller.Router           : warning
-2024-07-14T22:01:52.027+02:00 ERROR 6673 --- [demo-h2] [http-nio-8080-exec-2] com.maboglia.controller.Router           : errore
-2024-07-14T22:01:52.028+02:00  WARN 6673 --- [demo-h2] [http-nio-8080-exec-2] com.maboglia.controller.Router           : warning
+2024-07-15T10:12:09.368+02:00  INFO 6673 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2024-07-15T10:12:09.454+02:00  INFO 6673 --- [demo-h2] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:12:09.469+02:00  INFO 6673 --- [demo-h2] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-15T10:12:09.724+02:00  INFO 6673 --- [demo-h2] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-15T10:15:53.837+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 6673 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:15:53.838+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:15:54.028+02:00  WARN 6673 --- [demo-h2] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2024-07-15T10:15:54.034+02:00  INFO 6673 --- [demo-h2] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-15T10:15:54.038+02:00 ERROR 6673 --- [demo-h2] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.maboglia.DemoH2Application.main(DemoH2Application.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.maboglia.SecurityConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@686c301a]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.10.jar:6.1.10]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/security/config/annotation/web/builders/HttpSecurity
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.10.jar:6.1.10]
+	... 38 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.security.config.annotation.web.builders.HttpSecurity
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 42 common frames omitted
+
+2024-07-15T10:17:02.556+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 6673 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:17:02.557+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:17:02.701+02:00  WARN 6673 --- [demo-h2] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2024-07-15T10:17:02.706+02:00  INFO 6673 --- [demo-h2] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-15T10:17:02.710+02:00 ERROR 6673 --- [demo-h2] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.maboglia.DemoH2Application.main(DemoH2Application.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.maboglia.SecurityConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5bd3bb1e]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.10.jar:6.1.10]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/security/config/annotation/web/builders/HttpSecurity
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.10.jar:6.1.10]
+	... 38 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.security.config.annotation.web.builders.HttpSecurity
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 42 common frames omitted
+
+2024-07-15T10:17:52.226+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 6673 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:17:52.229+02:00  INFO 6673 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:17:52.492+02:00  WARN 6673 --- [demo-h2] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2024-07-15T10:17:52.500+02:00  INFO 6673 --- [demo-h2] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-15T10:17:52.507+02:00 ERROR 6673 --- [demo-h2] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.maboglia.DemoH2Application.main(DemoH2Application.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.maboglia.SecurityConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@738f75ea]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.10.jar:6.1.10]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.3.1.jar:3.3.1]
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/security/config/annotation/web/builders/HttpSecurity
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.10.jar:6.1.10]
+	... 38 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.security.config.annotation.web.builders.HttpSecurity
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 42 common frames omitted
+
+2024-07-15T10:23:01.643+02:00  INFO 1800 --- [demo-h2] [main] com.maboglia.DemoH2ApplicationTests      : Starting DemoH2ApplicationTests using Java 17.0.7 with PID 1800 (started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:23:01.656+02:00  INFO 1800 --- [demo-h2] [main] com.maboglia.DemoH2ApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:23:03.758+02:00  INFO 1800 --- [demo-h2] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:23:03.834+02:00  INFO 1800 --- [demo-h2] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:23:05.065+02:00  INFO 1800 --- [demo-h2] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-15T10:23:05.602+02:00  INFO 1800 --- [demo-h2] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:23:05.608+02:00  INFO 1800 --- [demo-h2] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-15T10:23:05.868+02:00  INFO 1800 --- [demo-h2] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:23:06.011+02:00  INFO 1800 --- [demo-h2] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-15T10:23:06.141+02:00  INFO 1800 --- [demo-h2] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:23:06.833+02:00  INFO 1800 --- [demo-h2] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:23:07.521+02:00  INFO 1800 --- [demo-h2] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:23:07.531+02:00  INFO 1800 --- [demo-h2] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:23:07.699+02:00  WARN 1800 --- [demo-h2] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:23:08.109+02:00  INFO 1800 --- [demo-h2] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:23:08.928+02:00  WARN 1800 --- [demo-h2] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:08.930+02:00  WARN 1800 --- [demo-h2] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:08.931+02:00  WARN 1800 --- [demo-h2] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:08.932+02:00  WARN 1800 --- [demo-h2] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:08.933+02:00  WARN 1800 --- [demo-h2] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:09.704+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:23:09.928+02:00  INFO 1800 --- [demo-h2] [main] com.maboglia.DemoH2ApplicationTests      : Started DemoH2ApplicationTests in 8.927 seconds (process running for 10.906)
+2024-07-15T10:23:11.000+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.004+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.009+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2024-07-15T10:23:11.310+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.311+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.316+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-07-15T10:23:11.354+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.355+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.358+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-07-15T10:23:11.381+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.383+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.386+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-07-15T10:23:11.413+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.416+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.419+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-07-15T10:23:11.492+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.493+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.497+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-07-15T10:23:11.531+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.532+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.547+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 11 ms
+2024-07-15T10:23:11.574+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.581+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.609+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 21 ms
+2024-07-15T10:23:11.643+02:00  INFO 1800 --- [demo-h2] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-15T10:23:11.652+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-15T10:23:11.659+02:00  INFO 1800 --- [demo-h2] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-07-15T10:23:11.734+02:00  INFO 1800 --- [demo-h2] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:23:11.747+02:00  INFO 1800 --- [demo-h2] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-15T10:23:11.766+02:00  INFO 1800 --- [demo-h2] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-15T10:23:47.798+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 2001 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:23:47.806+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:23:47.916+02:00  INFO 2001 --- [demo-h2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-15T10:23:47.918+02:00  INFO 2001 --- [demo-h2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-15T10:23:49.130+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:23:49.157+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:23:50.014+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:23:50.036+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:23:50.037+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:23:50.098+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:23:50.099+02:00  INFO 2001 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2180 ms
+2024-07-15T10:23:50.165+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-15T10:23:50.461+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:23:50.464+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-15T10:23:50.482+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:23:50.747+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:23:50.834+02:00  INFO 2001 --- [demo-h2] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-15T10:23:50.883+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:23:51.176+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:23:51.610+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:23:51.618+02:00  INFO 2001 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:23:51.735+02:00  WARN 2001 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:23:52.052+02:00  INFO 2001 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:23:52.560+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:52.561+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:52.562+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:52.562+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:52.563+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:23:53.077+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:23:53.123+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:23:53.142+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 6.179 seconds (process running for 7.164)
+2024-07-15T10:24:00.578+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15T10:24:00.579+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-15T10:24:00.587+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2024-07-15T10:24:23.869+02:00 ERROR 2001 --- [demo-h2] [http-nio-8080-exec-3] com.maboglia.controller.Router           : errore
+2024-07-15T10:24:23.869+02:00  WARN 2001 --- [demo-h2] [http-nio-8080-exec-3] com.maboglia.controller.Router           : warning
+2024-07-15T10:24:57.588+02:00  WARN 2001 --- [demo-h2] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-07-15T10:25:43.854+02:00 ERROR 2001 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : errore
+2024-07-15T10:25:43.854+02:00  WARN 2001 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : warning
+2024-07-15T10:30:29.010+02:00  INFO 2001 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-15T10:30:29.028+02:00  INFO 2001 --- [demo-h2] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:30:29.034+02:00  INFO 2001 --- [demo-h2] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-15T10:30:29.135+02:00  INFO 2001 --- [demo-h2] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-15T10:30:29.303+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 2001 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:30:29.304+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:30:29.737+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:30:29.745+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:30:30.153+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:30:30.155+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:30:30.156+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:30:30.176+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:30:30.177+02:00  INFO 2001 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 868 ms
+2024-07-15T10:30:30.234+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-07-15T10:30:30.260+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:30:30.262+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-07-15T10:30:30.265+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:30:30.403+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:30:30.412+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:30:30.451+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:30:30.517+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:30:30.519+02:00  INFO 2001 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:30:30.583+02:00  WARN 2001 --- [demo-h2] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfig' defined in file [/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes/com/maboglia/SecurityConfig.class]: Failed to instantiate [com.maboglia.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+2024-07-15T10:30:30.583+02:00  INFO 2001 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:30:30.585+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-07-15T10:30:30.848+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-07-15T10:30:30.849+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-07-15T10:30:30.875+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-15T10:30:30.923+02:00 ERROR 2001 --- [demo-h2] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfig' defined in file [/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes/com/maboglia/SecurityConfig.class]: Failed to instantiate [com.maboglia.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1319) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.maboglia.DemoH2Application.main(DemoH2Application.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.maboglia.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1313) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert ")" to complete Expression
+	Syntax error on token ")", invalid Name
+	Syntax error on token ".", @ expected after this token
+	Syntax error on token ".", @ expected
+	Syntax error, insert ")" to complete SingleMemberAnnotation
+	Syntax error, insert "SimpleName" to complete QualifiedName
+	Syntax error, insert "Identifier (" to complete MethodHeaderName
+	Syntax error on token ";", { expected after this token
+	Syntax error on token "}", delete this token
+	Syntax error on token "WebSecurityCustomizer", record expected
+	Syntax error, insert "}" to complete ClassBody
+
+	at com.maboglia.SecurityConfig.<init>(SecurityConfig.java:38) ~[classes/:na]
+	at com.maboglia.SecurityConfig$$SpringCGLIB$$0.<init>(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:195) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 24 common frames omitted
+
+2024-07-15T10:32:07.520+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 2001 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:32:07.521+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:32:07.814+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:32:07.818+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:32:08.074+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:32:08.075+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:32:08.076+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:32:08.092+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:32:08.092+02:00  INFO 2001 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 568 ms
+2024-07-15T10:32:08.136+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-07-15T10:32:08.151+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn18: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:32:08.152+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-07-15T10:32:08.152+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:32:08.246+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:32:08.251+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:32:08.266+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:32:08.297+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:32:08.298+02:00  INFO 2001 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:32:08.370+02:00  WARN 2001 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:32:08.684+02:00  INFO 2001 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:32:09.085+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:32:09.087+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:32:09.088+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:32:09.088+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:32:09.089+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:32:09.487+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:32:09.514+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:32:09.525+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 2.045 seconds (process running for 503.547)
+2024-07-15T10:32:09.530+02:00  INFO 2001 --- [demo-h2] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-15T10:35:29.153+02:00  INFO 2001 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-15T10:35:29.163+02:00  INFO 2001 --- [demo-h2] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:35:29.166+02:00  INFO 2001 --- [demo-h2] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-07-15T10:35:29.182+02:00  INFO 2001 --- [demo-h2] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-07-15T10:35:29.329+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 2001 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:35:29.330+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:35:29.657+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:35:29.661+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:35:30.005+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:35:30.008+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:35:30.010+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:35:30.032+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:35:30.034+02:00  INFO 2001 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 698 ms
+2024-07-15T10:35:30.092+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-07-15T10:35:30.108+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn28: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:35:30.109+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-07-15T10:35:30.113+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:35:30.247+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:35:30.252+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:35:30.265+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:35:30.300+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:35:30.301+02:00  INFO 2001 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:35:30.395+02:00  WARN 2001 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:35:30.705+02:00  INFO 2001 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:35:31.052+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:35:31.053+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:35:31.053+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:35:31.053+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:35:31.053+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:35:31.395+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:35:31.419+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:35:31.432+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 2.157 seconds (process running for 705.454)
+2024-07-15T10:35:31.451+02:00  INFO 2001 --- [demo-h2] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-15T10:35:37.171+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15T10:35:37.173+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-15T10:35:37.177+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-15T10:36:05.533+02:00 ERROR 2001 --- [demo-h2] [http-nio-8080-exec-8] com.maboglia.controller.Router           : errore
+2024-07-15T10:36:05.533+02:00  WARN 2001 --- [demo-h2] [http-nio-8080-exec-8] com.maboglia.controller.Router           : warning
+2024-07-15T10:41:43.277+02:00  INFO 2001 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-15T10:41:43.284+02:00  INFO 2001 --- [demo-h2] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:41:43.286+02:00  INFO 2001 --- [demo-h2] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-07-15T10:41:43.499+02:00  INFO 2001 --- [demo-h2] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-07-15T10:41:43.626+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 2001 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:41:43.626+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:41:43.954+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:41:43.957+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:41:44.372+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:41:44.375+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:41:44.377+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:41:44.390+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:41:44.391+02:00  INFO 2001 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 758 ms
+2024-07-15T10:41:44.462+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-07-15T10:41:44.486+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection conn38: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:41:44.490+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-07-15T10:41:44.492+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:41:44.684+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:41:44.691+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:41:44.709+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:41:44.747+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:41:44.749+02:00  INFO 2001 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:41:44.828+02:00  WARN 2001 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:41:45.136+02:00  INFO 2001 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:41:45.561+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:41:45.561+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:41:45.562+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:41:45.562+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:41:45.562+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:41:46.013+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:41:46.035+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:41:46.052+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 2.469 seconds (process running for 1080.074)
+2024-07-15T10:41:46.056+02:00  INFO 2001 --- [demo-h2] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-15T10:44:21.619+02:00  INFO 2001 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-15T10:44:21.630+02:00  INFO 2001 --- [demo-h2] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:44:21.632+02:00  INFO 2001 --- [demo-h2] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-07-15T10:44:21.848+02:00  INFO 2001 --- [demo-h2] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-07-15T10:44:21.965+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 2001 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:44:21.966+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:44:22.171+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:44:22.174+02:00  INFO 2001 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:44:22.395+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:44:22.398+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:44:22.400+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:44:22.411+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:44:22.411+02:00  INFO 2001 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 442 ms
+2024-07-15T10:44:22.450+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-07-15T10:44:22.462+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection conn48: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:44:22.463+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-07-15T10:44:22.464+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:44:22.558+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:44:22.564+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:44:22.579+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:44:22.607+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:44:22.607+02:00  INFO 2001 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:44:22.686+02:00  WARN 2001 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:44:22.976+02:00  INFO 2001 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:44:23.231+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:44:23.232+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:44:23.232+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:44:23.232+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:44:23.232+02:00  WARN 2001 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:44:23.530+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:44:23.559+02:00  INFO 2001 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:44:23.578+02:00  INFO 2001 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 1.647 seconds (process running for 1237.599)
+2024-07-15T10:44:23.581+02:00  INFO 2001 --- [demo-h2] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-15T10:44:33.266+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15T10:44:33.266+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-15T10:44:33.268+02:00  INFO 2001 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-15T10:44:52.493+02:00 ERROR 2001 --- [demo-h2] [http-nio-8080-exec-9] com.maboglia.controller.Router           : errore
+2024-07-15T10:44:52.493+02:00  WARN 2001 --- [demo-h2] [http-nio-8080-exec-9] com.maboglia.controller.Router           : warning
+2024-07-15T10:45:28.216+02:00  INFO 2001 --- [demo-h2] [RMI TCP Connection(45)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-07-15T10:45:28.226+02:00  INFO 2001 --- [demo-h2] [RMI TCP Connection(45)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:45:28.227+02:00  INFO 2001 --- [demo-h2] [RMI TCP Connection(45)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-07-15T10:45:28.241+02:00  INFO 2001 --- [demo-h2] [RMI TCP Connection(45)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-07-15T10:45:36.080+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 5442 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:45:36.082+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:45:36.166+02:00  INFO 5442 --- [demo-h2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-15T10:45:36.166+02:00  INFO 5442 --- [demo-h2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-15T10:45:37.254+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:45:37.283+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:45:38.304+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:45:38.322+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:45:38.324+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:45:38.401+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:45:38.403+02:00  INFO 5442 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2236 ms
+2024-07-15T10:45:38.505+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-15T10:45:38.952+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:45:38.959+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-15T10:45:38.984+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:45:39.260+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:45:39.349+02:00  INFO 5442 --- [demo-h2] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-15T10:45:39.395+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:45:39.734+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:45:40.206+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:45:40.218+02:00  INFO 5442 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:45:40.374+02:00  WARN 5442 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:45:40.723+02:00  INFO 5442 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:45:41.305+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:45:41.306+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:45:41.307+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:45:41.307+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:45:41.307+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:45:41.807+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:45:41.864+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:45:41.887+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 6.439 seconds (process running for 7.245)
+2024-07-15T10:46:01.160+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15T10:46:01.161+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-15T10:46:01.166+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-07-15T10:52:11.744+02:00  INFO 5442 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-15T10:52:11.761+02:00  INFO 5442 --- [demo-h2] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:52:11.767+02:00  INFO 5442 --- [demo-h2] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-15T10:52:11.865+02:00  INFO 5442 --- [demo-h2] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-15T10:52:12.023+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 5442 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:52:12.025+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:52:12.403+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:52:12.407+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:52:12.712+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:52:12.713+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:52:12.714+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:52:12.729+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:52:12.731+02:00  INFO 5442 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 700 ms
+2024-07-15T10:52:12.817+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-07-15T10:52:12.845+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:52:12.848+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-07-15T10:52:12.851+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:52:13.014+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:52:13.023+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:52:13.047+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:52:13.091+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:52:13.094+02:00  INFO 5442 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:52:13.182+02:00  WARN 5442 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:52:13.510+02:00  INFO 5442 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:52:13.842+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:52:13.842+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:52:13.843+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:52:13.843+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:52:13.843+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:52:14.149+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:52:14.174+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:52:14.184+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 2.215 seconds (process running for 399.542)
+2024-07-15T10:52:14.190+02:00  INFO 5442 --- [demo-h2] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-15T10:53:05.616+02:00  INFO 5442 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-15T10:53:05.624+02:00  INFO 5442 --- [demo-h2] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:53:05.627+02:00  INFO 5442 --- [demo-h2] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-07-15T10:53:05.639+02:00  INFO 5442 --- [demo-h2] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-07-15T10:53:05.747+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 5442 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:53:05.748+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:53:06.016+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:53:06.019+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:53:06.238+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:53:06.239+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:53:06.240+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:53:06.252+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:53:06.252+02:00  INFO 5442 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 500 ms
+2024-07-15T10:53:06.306+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-07-15T10:53:06.330+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:53:06.330+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-07-15T10:53:06.331+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:53:06.421+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:53:06.427+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:53:06.446+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:53:06.477+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:53:06.478+02:00  INFO 5442 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:53:06.553+02:00  WARN 5442 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:53:06.840+02:00  INFO 5442 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:53:07.210+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:07.210+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:07.211+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:07.211+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:07.211+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:07.586+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:53:07.614+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:53:07.630+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 1.922 seconds (process running for 452.988)
+2024-07-15T10:53:07.635+02:00  INFO 5442 --- [demo-h2] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-15T10:53:11.801+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15T10:53:11.802+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-15T10:53:11.813+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2024-07-15T10:53:28.518+02:00 ERROR 5442 --- [demo-h2] [http-nio-8080-exec-5] com.maboglia.controller.Router           : errore
+2024-07-15T10:53:28.519+02:00  WARN 5442 --- [demo-h2] [http-nio-8080-exec-5] com.maboglia.controller.Router           : warning
+2024-07-15T10:53:52.043+02:00  INFO 5442 --- [demo-h2] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-15T10:53:52.053+02:00  INFO 5442 --- [demo-h2] [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:53:52.055+02:00  INFO 5442 --- [demo-h2] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-07-15T10:53:52.291+02:00  INFO 5442 --- [demo-h2] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-07-15T10:53:52.430+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Starting DemoH2Application using Java 17.0.7 with PID 5442 (/home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2/target/classes started by marcuser in /home/marcuser/Dropbox/CorsoJava/github/spring-boot/workspace-spring/demo-h2)
+2024-07-15T10:53:52.430+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : No active profile set, falling back to 1 default profile: "default"
+2024-07-15T10:53:52.646+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-15T10:53:52.650+02:00  INFO 5442 --- [demo-h2] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-07-15T10:53:52.899+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-15T10:53:52.900+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-15T10:53:52.900+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15T10:53:52.912+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-15T10:53:52.913+02:00  INFO 5442 --- [demo-h2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 480 ms
+2024-07-15T10:53:52.958+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-07-15T10:53:52.970+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:file:./data/fileDB user=SA
+2024-07-15T10:53:52.973+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-07-15T10:53:52.975+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/fileDB'
+2024-07-15T10:53:53.063+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-15T10:53:53.068+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-15T10:53:53.082+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-15T10:53:53.108+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-15T10:53:53.109+02:00  INFO 5442 --- [demo-h2] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-15T10:53:53.179+02:00  WARN 5442 --- [demo-h2] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15T10:53:53.465+02:00  INFO 5442 --- [demo-h2] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-15T10:53:53.836+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:53.836+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:53.837+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/img/**'], Ant [pattern='/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:53.837+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/lib/**'], Ant [pattern='/lib/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:53.837+02:00  WARN 5442 --- [demo-h2] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-15T10:53:54.226+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-15T10:53:54.249+02:00  INFO 5442 --- [demo-h2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-15T10:53:54.264+02:00  INFO 5442 --- [demo-h2] [restartedMain] com.maboglia.DemoH2Application           : Started DemoH2Application in 1.875 seconds (process running for 499.622)
+2024-07-15T10:53:54.268+02:00  INFO 5442 --- [demo-h2] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-15T10:53:58.114+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15T10:53:58.114+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-15T10:53:58.120+02:00  INFO 5442 --- [demo-h2] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2024-07-15T10:53:58.422+02:00 ERROR 5442 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : errore
+2024-07-15T10:53:58.423+02:00  WARN 5442 --- [demo-h2] [http-nio-8080-exec-1] com.maboglia.controller.Router           : warning
