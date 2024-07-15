@@ -1,0 +1,3 @@
+2024-07-14 20:35:09.046030+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENTI" already exists; SQL statement:
+CREATE TABLE Studenti ( Matricola INT PRIMARY KEY, Nome VARCHAR(50) NOT NULL, Cognome VARCHAR(50) NOT NULL, DataNascita DATE NOT NULL ) [42101-224]
