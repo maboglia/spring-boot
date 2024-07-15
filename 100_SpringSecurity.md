@@ -7,10 +7,14 @@
 - [article](https://www.baeldung.com/spring-deprecated-websecurityconfigureradapter)
 - [github code](https://github.com/eugenp/tutorials/tree/master/spring-security-modules/spring-security-web-boot-4)
 
+---
+
 ### Panoramica
 
 Spring Security consente di personalizzare la sicurezza HTTP per funzionalità come l'autorizzazione degli endpoint o la configurazione del gestore di autenticazione, estendendo una classe WebSecurityConfigurerAdapter. Tuttavia, nelle versioni recenti, Spring depreca questo approccio e incoraggia una configurazione della sicurezza basata su componenti.
 In questo tutorial, impareremo come possiamo sostituire questa deprecazione in un'applicazione Spring Boot ed eseguire alcuni test MVC.
+
+---
 
 ### 2. Spring Security Senza WebSecurityConfigurerAdapter
 
@@ -32,6 +36,8 @@ public class SecurityConfig {
 ```
 
 Aggiungeremo annotazioni di sicurezza sui metodi per abilitare l'elaborazione basata su diversi ruoli.
+
+---
 
 ### 2.1. Configurare l'Autenticazione
 
@@ -69,6 +75,8 @@ public AuthenticationManager authenticationManager(HttpSecurity http, BCryptPass
 
 Allo stesso modo, questo funzionerà se utilizziamo l'autenticazione **JDBC** o **LDAP**.
 
+---
+
 ### 2.2. Configurare la Sicurezza HTTP
 
 Più importante, se vogliamo evitare la deprecazione per la sicurezza HTTP, possiamo creare un bean `SecurityFilterChain`. Ad esempio, supponiamo di voler proteggere gli endpoint a seconda dei ruoli, lasciando un punto di ingresso anonimo solo per il login. Restringeremo anche qualsiasi richiesta di eliminazione al ruolo di amministratore. Utilizzeremo l'**Autenticazione Basic**:
@@ -94,7 +102,9 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 La sicurezza HTTP costruirà un oggetto `DefaultSecurityFilterChain` per caricare i request matchers e i filtri.
 
-[Spiegazione](./104_spring_secuirty_http.md)
+[Spiegazione](./104_spring_security_http.md)
+
+---
 
 ### 2.3. Configurare la Sicurezza Web
 
@@ -111,6 +121,10 @@ public WebSecurityCustomizer webSecurityCustomizer() {
 
 In questo modo, configuriamo la sicurezza Web per ignorare i percorsi specificati, consentendo di caricare le risorse statiche senza richiedere autenticazione.
 
+[Spiegazione](./105_spring_security_web.md)
+
+
+---
 
 ### 3. Endpoints Controller
 
@@ -149,11 +163,15 @@ public class ResourceController {
 
 Come abbiamo menzionato in precedenza durante la definizione della sicurezza HTTP, aggiungeremo un endpoint generico `/login` accessibile da chiunque, endpoint specifici per admin e user, e un endpoint `/all` non protetto da un ruolo specifico ma che richiede comunque l'autenticazione.
 
+---
+
 ### 4. Testare gli Endpoints
 
 Aggiungiamo la nostra nuova configurazione a un test Spring Boot utilizzando un MVC mock per testare i nostri endpoint.
 
-#### 4.1. Testare gli Utenti Anonimi
+---
+
+### 4.1. Testare gli Utenti Anonimi
 
 Gli utenti anonimi possono accedere all'endpoint `/login`. Se provano ad accedere a qualcos'altro, non saranno autorizzati (401):
 
@@ -175,7 +193,9 @@ public void whenAnonymousAccessRestrictedEndpoint_thenIsUnauthorized() throws Ex
 
 Inoltre, per tutti gli endpoint tranne `/login`, richiediamo sempre l'autenticazione, come per l'endpoint `/all`.
 
-#### 4.2. Testare il Ruolo di Utente
+---
+
+### 4.2. Testare il Ruolo di Utente
 
 Un ruolo di utente può accedere agli endpoint generici e a tutti gli altri percorsi che abbiamo concesso per questo ruolo:
 
@@ -211,7 +231,12 @@ public void whenUserAccessDeleteSecuredEndpoint_thenIsForbidden() throws Excepti
 
 È importante notare che se un utente tenta di accedere a un endpoint protetto per admin, l'utente riceverà un errore "forbidden" (403). Al contrario, qualcuno senza credenziali, come un anonimo nell'esempio precedente, otterrà un errore "unauthorized" (401).
 
-#### 4.3. Testare il Ruolo di Admin
+
+[Spiegazione](./106_spring_security_test.md)
+
+---
+
+### 4.3. Testare il Ruolo di Admin
 
 Come possiamo vedere, qualcuno con un ruolo di admin può accedere a qualsiasi endpoint:
 
@@ -241,6 +266,8 @@ public void whenAdminAccessDeleteSecuredEndpoint_thenIsOk() throws Exception {
 In questo modo, possiamo verificare che il ruolo di admin abbia l'accesso previsto agli endpoint specificati.
 
 
+
+---
 
 ### 5. Conclusione
 
