@@ -94,6 +94,8 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 La sicurezza HTTP costruirà un oggetto `DefaultSecurityFilterChain` per caricare i request matchers e i filtri.
 
+[Spiegazione](./104_spring_secuirty_http.md)
+
 ### 2.3. Configurare la Sicurezza Web
 
 Per la sicurezza Web, ora possiamo utilizzare l'interfaccia di callback `WebSecurityCustomizer`. Aggiungeremo un livello di debug e ignoreremo alcuni percorsi, come immagini o script:
