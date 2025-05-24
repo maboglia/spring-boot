@@ -38,3 +38,76 @@ In **fase di sviluppo**, è spesso comune vedere gli sviluppatori utilizzare `up
 In produzione, è spesso altamente consigliato non utilizzare `none` o semplicemente non specificare questa proprietà. Questo perché è pratica comune per i DBA rivedere gli script di migrazione per le modifiche al database, in particolare se il database è condiviso tra più servizi e applicazioni.
 
 [fonte stackoverflow]
+
+---
+
+Ecco una spiegazione chiara e sintetica delle proprietà principali legate alla configurazione del `DataSource` in un'applicazione **Spring Boot**, suddivise per tipologia.
+
+---
+
+## 🔌 **Connessione al database**
+
+Queste sono le proprietà fondamentali per connettersi al database:
+
+| Proprietà                             | Descrizione                                                                        |
+| ------------------------------------- | ---------------------------------------------------------------------------------- |
+| `spring.datasource.url`               | URL JDBC per la connessione al database (es: `jdbc:mysql://localhost:3306/dbname`) |
+| `spring.datasource.username`          | Username per l'accesso al database                                                 |
+| `spring.datasource.password`          | Password per l'accesso al database                                                 |
+| `spring.datasource.driver-class-name` | Nome della classe del driver JDBC (auto-rilevato in base all'URL se omesso)        |
+
+---
+
+## ⚙️ **Tipo e pool di connessioni**
+
+Spring Boot supporta diversi connection pool (Hikari, Tomcat, DBCP2):
+
+| Proprietà                    | Descrizione                                                   |
+| ---------------------------- | ------------------------------------------------------------- |
+| `spring.datasource.type`     | Classe del pool di connessioni da usare (Hikari è il default) |
+| `spring.datasource.hikari.*` | Configurazioni specifiche per **HikariCP**                    |
+| `spring.datasource.tomcat.*` | Configurazioni specifiche per **Tomcat JDBC Pool**            |
+| `spring.datasource.dbcp2.*`  | Configurazioni per **Apache Commons DBCP2**                   |
+
+---
+
+## 🏗️ **Inizializzazione del database (schema e dati)**
+
+| Proprietà                                        | Descrizione                                                           |
+| ------------------------------------------------ | --------------------------------------------------------------------- |
+| `spring.datasource.initialization-mode=embedded` | Controlla se eseguire gli script SQL (`always`, `never`, `embedded`)  |
+| `spring.datasource.schema`                       | Percorso degli script DDL (es: `classpath:schema.sql`)                |
+| `spring.datasource.data`                         | Percorso degli script DML (es: `classpath:data.sql`)                  |
+| `spring.datasource.schema-username`              | Username da usare per eseguire gli script DDL (opzionale)             |
+| `spring.datasource.schema-password`              | Password per gli script DDL                                           |
+| `spring.datasource.data-username`                | Username per eseguire gli script DML                                  |
+| `spring.datasource.data-password`                | Password per gli script DML                                           |
+| `spring.datasource.continue-on-error=false`      | Interrompe l’esecuzione se uno script SQL fallisce                    |
+| `spring.datasource.separator=;`                  | Separatore per più statement SQL nello stesso file                    |
+| `spring.datasource.sql-script-encoding`          | Encoding dei file SQL (es: `UTF-8`)                                   |
+| `spring.datasource.platform=all`                 | Suffix del file SQL in base alla piattaforma (es: `schema-mysql.sql`) |
+
+---
+
+## 🛠️ **Altre configurazioni**
+
+| Proprietà                                      | Descrizione                                                                                 |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `spring.datasource.generate-unique-name=false` | Genera un nome casuale per il datasource (utile in test)                                    |
+| `spring.datasource.name`                       | Nome statico del datasource (default: `testdb`)                                             |
+| `spring.datasource.jmx-enabled=false`          | Abilita l’esposizione JMX (per il pool)                                                     |
+| `spring.datasource.jndi-name`                  | Nome JNDI da usare per cercare il datasource esternamente (esclude `url`, `username`, etc.) |
+| `spring.datasource.xa.data-source-class-name`  | Classe dell’XA datasource per transazioni distribuite                                       |
+| `spring.datasource.xa.properties`              | Proprietà da passare all’XA datasource                                                      |
+
+---
+
+## 🔄 **Auto-configurazione**
+
+Spring Boot usa:
+
+* `DataSourceAutoConfiguration` per configurare automaticamente un `DataSource`
+* `DataSourceProperties` come bean interno per raccogliere le proprietà sopra viste
+
+Puoi personalizzare il bean di `DataSource` sovrascrivendo queste proprietà o definendone uno tuo con `@Bean`.
+
