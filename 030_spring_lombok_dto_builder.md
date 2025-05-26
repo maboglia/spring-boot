@@ -1,3 +1,7 @@
+
+![images/programmer/DTO1.png](https://github.com/maboglia/ProgrammingResources/blob/master/images/programmer/DTO2.png?raw=true)
+
+
 Il **progetto Lombok** è una libreria Java open-source che mira a ridurre il **boilerplate code**, cioè il codice ripetitivo e verboso tipico della programmazione Java. Lombok permette di scrivere classi Java più concise e leggibili grazie a **annotazioni** che generano automaticamente metodi comuni come `getters`, `setters`, `equals`, `hashCode`, `toString`, costruttori, builder, e altro ancora.
 
 ---
@@ -934,6 +938,8 @@ public class EsameController {
 ```
 
 ---
+
+![images/programmer/DTO2.png](https://github.com/maboglia/ProgrammingResources/blob/master/images/programmer/DTO2.png?raw=true)
 
 Non **devi** sempre usare i DTO, ma in molti casi **è fortemente consigliato**. Vediamo **quando usarli**, **perché**, e **quando puoi evitarli**:
 
