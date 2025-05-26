@@ -1363,3 +1363,278 @@ public class EsameController {
 ---
 
 [progetto scaricabile](./workspace-spring/spring-corsi/src/main)
+
+---
+
+## Configurazione application.properties e database
+
+Ecco un esempio completo di `application.properties` per il tuo progetto Spring Boot che gestisce Materie, Docenti, Studenti ed Esami. Questo file è pensato per un'applicazione che usa **H2 Database** in memoria per semplificare lo sviluppo e i test:
+
+```properties
+# Server
+server.port=8080
+
+# Datasource H2
+spring.datasource.url=jdbc:h2:mem:esamidb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+# JPA / Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+
+# H2 Console
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# Thymeleaf
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.cache=false
+spring.thymeleaf.mode=HTML
+```
+
+---
+
+### Opzioni aggiuntive
+
+Se invece usi un database reale (come MySQL o PostgreSQL), ecco la configurazione equivalente. 
+
+Perfetto! Ecco come configurare il file `application.properties` per un'applicazione Spring Boot con **MySQL** usando come utente e password `ITS_2025`.
+
+### ✅ `application.properties` per MySQL
+
+```properties
+# Server port
+server.port=8080
+
+# MySQL DataSource Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/esamidb?useSSL=false&serverTimezone=UTC
+spring.datasource.username=ITS_2025
+spring.datasource.password=ITS_2025
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# Hibernate & JPA
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# Thymeleaf (optional, for views)
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.cache=false
+
+# Optional: To prevent timezone issues
+spring.jpa.properties.hibernate.jdbc.time_zone=UTC
+```
+
+---
+
+### 📌 Assicurati che:
+
+1. **MySQL sia in esecuzione** e accessibile su `localhost:3306`.
+2. **Esista un database chiamato `esamidb`** (`CREATE DATABASE esamidb;`).
+3. L'utente `ITS_2025` abbia i permessi su quel database:
+
+   ```sql
+   CREATE USER 'ITS_2025'@'localhost' IDENTIFIED BY 'ITS_2025';
+   GRANT ALL PRIVILEGES ON esamidb.* TO 'ITS_2025'@'localhost';
+   FLUSH PRIVILEGES;
+   ```
+
+---
+
+### script SQL per popolare le tabelle iniziali
+
+Ecco uno **script SQL completo** per creare le tabelle principali (`materia`, `docente`, `studente`, `esame`) e popolarle con **dati di prova** per il progetto Spring Boot su **MySQL**.
+
+---
+
+### 📄 `init_esamidb.sql`
+
+```sql
+-- Crea il database (se non esiste)
+CREATE DATABASE IF NOT EXISTS esamidb;
+USE esamidb;
+
+-- Tabella: materia
+CREATE TABLE IF NOT EXISTS materia (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+-- Tabella: docente
+CREATE TABLE IF NOT EXISTS docente (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cognome VARCHAR(100) NOT NULL
+);
+
+-- Tabella: studente
+CREATE TABLE IF NOT EXISTS studente (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cognome VARCHAR(100) NOT NULL
+);
+
+-- Tabella: esame
+CREATE TABLE IF NOT EXISTS esame (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    data DATE NOT NULL,
+    voto INT NOT NULL,
+    id_materia BIGINT NOT NULL,
+    id_docente BIGINT NOT NULL,
+    id_studente BIGINT NOT NULL,
+    FOREIGN KEY (id_materia) REFERENCES materia(id),
+    FOREIGN KEY (id_docente) REFERENCES docente(id),
+    FOREIGN KEY (id_studente) REFERENCES studente(id)
+);
+
+-- Dati di prova
+
+-- Materie
+INSERT INTO materia (nome) VALUES
+('Programmazione Java'),
+('Database'),
+('Sistemi Operativi');
+
+-- Docenti
+INSERT INTO docente (nome, cognome) VALUES
+('Luca', 'Rossi'),
+('Marco', 'Bianchi'),
+('Elena', 'Verdi');
+
+-- Studenti
+INSERT INTO studente (nome, cognome) VALUES
+('Giulia', 'Neri'),
+('Andrea', 'Ferrari'),
+('Sara', 'Russo');
+
+-- Esami
+INSERT INTO esame (data, voto, id_materia, id_docente, id_studente) VALUES
+('2025-05-10', 28, 1, 1, 1),
+('2025-05-11', 30, 2, 2, 2),
+('2025-05-12', 27, 3, 3, 3);
+```
+
+---
+
+### ✅ Come usarlo
+
+1. Apri **MySQL Workbench**, **DBeaver** o terminale.
+2. Esegui lo script sul tuo server MySQL:
+
+   ```bash
+   mysql -u ITS_2 -p < init_esamidb.sql
+   ```
+3. Assicurati che `spring.datasource.url` punti a `esamidb`.
+
+---
+
+## Puoi far eseguire a Spring le istruzioni DDL e DML
+
+---
+
+## ✅ 1. File `schema.sql`
+
+Per creare le tabelle:
+
+```sql
+CREATE TABLE IF NOT EXISTS materia (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS docente (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cognome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS studente (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cognome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS esame (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    data DATE NOT NULL,
+    voto INT NOT NULL,
+    id_materia BIGINT NOT NULL,
+    id_docente BIGINT NOT NULL,
+    id_studente BIGINT NOT NULL,
+    FOREIGN KEY (id_materia) REFERENCES materia(id),
+    FOREIGN KEY (id_docente) REFERENCES docente(id),
+    FOREIGN KEY (id_studente) REFERENCES studente(id)
+);
+```
+
+---
+
+## ✅ 2. File `data.sql`
+
+Per popolare le tabelle con dati di esempio:
+
+```sql
+-- Materie
+INSERT INTO materia (nome) VALUES
+('Programmazione Java'),
+('Database'),
+('Sistemi Operativi');
+
+-- Docenti
+INSERT INTO docente (nome, cognome) VALUES
+('Luca', 'Rossi'),
+('Marco', 'Bianchi'),
+('Elena', 'Verdi');
+
+-- Studenti
+INSERT INTO studente (nome, cognome) VALUES
+('Giulia', 'Neri'),
+('Andrea', 'Ferrari'),
+('Sara', 'Russo');
+
+-- Esami
+INSERT INTO esame (data, voto, id_materia, id_docente, id_studente) VALUES
+('2025-05-10', 28, 1, 1, 1),
+('2025-05-11', 30, 2, 2, 2),
+('2025-05-12', 27, 3, 3, 3);
+```
+
+---
+
+## ✅ 3. Modifica `application.properties`
+
+```properties
+# Connessione MySQL
+spring.datasource.url=jdbc:mysql://localhost:3306/esamidb
+spring.datasource.username=ITS_2
+spring.datasource.password=ITS_2
+
+# Driver e JPA
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# Inizializzazione automatica con schema.sql e data.sql
+spring.sql.init.mode=always
+spring.sql.init.schema-locations=classpath:schema.sql
+spring.sql.init.data-locations=classpath:data.sql
+```
+
+---
+
+## 📁 Dove posizionare i file
+
+Metti entrambi i file in:
+
+```
+src/main/resources/schema.sql  
+src/main/resources/data.sql
+```
