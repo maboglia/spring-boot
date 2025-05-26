@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Lista Esami</title></head>
+<body>
+<h2>Lista Esami</h2>
+<a href="/esami/nuovo">Aggiungi Esame</a>
+<table>
+    <tr><th>ID</th><th>Data</th><th>Studente</th><th>Materia</th><th>Voto</th></tr>
+    <tr th:each="esame : ${esami}">
+        <td th:text="${esame.id}"></td>
+        <td th:text="${esame.data}"></td>
+        <td th:text="${esame.idStudente}"></td>
+        <td th:text="${esame.idMateria}"></td>
+        <td th:text="${esame.voto}"></td>
+    </tr>
+</table>
+</body>
+</html>

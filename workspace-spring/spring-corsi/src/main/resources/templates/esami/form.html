@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Nuovo Esame</title></head>
+<body>
+<h2>Nuovo Esame</h2>
+<form method="post" action="/esami">
+    <label>Data:</label>
+    <input type="date" name="data"><br>
+    <label>Studente ID:</label>
+    <input type="number" name="idStudente"><br>
+    <label>Materia ID:</label>
+    <input type="number" name="idMateria"><br>
+    <label>Voto:</label>
+    <input type="number" name="voto"><br>
+    <button type="submit">Salva</button>
+</form>
+</body>
+</html>
