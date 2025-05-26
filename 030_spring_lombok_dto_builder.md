@@ -932,3 +932,434 @@ public class EsameController {
     }
 }
 ```
+
+---
+
+Non **devi** sempre usare i DTO, ma in molti casi **è fortemente consigliato**. Vediamo **quando usarli**, **perché**, e **quando puoi evitarli**:
+
+---
+
+### ✅ **Quando usare i DTO (Data Transfer Object)**
+
+Usali quando:
+
+1. **Esponi dati tramite API REST**
+   – Eviti di mostrare direttamente le entità del database (Entity) all’esterno.
+   – Nascondi campi sensibili o interni (`password`, `createdAt`, ecc.).
+
+2. **Vuoi controllare i dati in input/output**
+   – DTO separati per `Create`, `Update` o `Response` ti permettono validazioni e conversioni specifiche.
+
+3. **Hai mapping complessi o aggregati**
+   – Un DTO può aggregare più entità (`StudenteDTO` che include anche le `Materie` frequentate).
+
+4. **Mantieni un'architettura pulita**
+   – Aiuta a separare il dominio (Entity) dalla logica di presentazione o API.
+
+---
+
+### ❌ **Quando puoi evitare i DTO**
+
+1. **Progetti piccoli o prototipi**
+   – Se l’app è semplice e interna, puoi usare direttamente le Entity.
+
+2. **Lettura diretta senza logica complessa**
+   – Se esponi solo pochi dati letti dal database senza logica o manipolazione, un DTO può essere superfluo.
+
+3. **Non hai bisogno di nascondere o trasformare dati**
+   – Se il tuo `Entity` è già una rappresentazione fedele del dato da esporre.
+
+---
+
+### 🔍 Esempio pratico
+
+Se hai questa Entity:
+
+```java
+@Entity
+public class Studente {
+    private Long id;
+    private String nome;
+    private String cognome;
+    private String email;
+    private String password; // NON vuoi esporla!
+}
+```
+
+Evita di esporla direttamente. Usa un DTO:
+
+```java
+public class StudenteDTO {
+    private Long id;
+    private String nomeCompleto;
+    private String email;
+}
+```
+
+E un mapper:
+
+```java
+StudenteDTO studenteToDTO(Studente s) {
+    return StudenteDTO.builder()
+        .id(s.getId())
+        .nomeCompleto(s.getNome() + " " + s.getCognome())
+        .email(s.getEmail())
+        .build();
+}
+```
+
+---
+
+### ✅ In sintesi
+
+| Scenario                            | Uso DTO?               |
+| ----------------------------------- | ---------------------- |
+| API pubblica                        | **Sì**                 |
+| Validazioni input                   | **Sì**                 |
+| Applicazione interna molto semplice | **No (puoi evitarlo)** |
+| Entity con dati sensibili           | **Sì**                 |
+| Progetto grande o scalabile         | **Sì**                 |
+
+---
+
+Perfetto! Inserire il **pattern Facade** nel contesto della tua applicazione Spring Boot per la gestione delle **views (ad esempio pagine HTML con Thymeleaf o frontend)** è un’ottima idea per **semplificare l’accesso alla logica di business** da parte dei controller o componenti di presentazione.
+
+---
+
+## 🔷 Cos’è il Pattern Facade?
+
+Il **Facade Pattern** fornisce un’interfaccia semplificata a un insieme complesso di classi, librerie o servizi.
+In un'app MVC, può essere usato per:
+
+* semplificare la chiamata di più servizi o DAO,
+* nascondere la logica complessa del dominio,
+* mantenere i controller puliti e focalizzati sulla presentazione.
+
+---
+
+## 🧩 Contesto della tua App
+
+Hai un dominio didattico con:
+
+* `Studente`
+* `Docente`
+* `Materia`
+* `Esame`
+
+Un controller può dover mostrare nella view, ad esempio:
+
+* l’elenco degli esami di uno studente,
+* i dettagli di una materia e i docenti che la insegnano.
+
+👉 È qui che entra in gioco la **Facade**.
+
+---
+
+## 📦 Esempio di Facade: `CorsoInformaticaFacade`
+
+```java
+@Service
+@RequiredArgsConstructor
+public class CorsoInformaticaFacade {
+
+    private final StudenteService studenteService;
+    private final EsameService esameService;
+    private final DocenteService docenteService;
+    private final MateriaService materiaService;
+
+    public StudenteDTO getStudenteConEsami(Long idStudente) {
+        var studente = studenteService.findById(idStudente);
+        var esami = esameService.findByStudenteId(idStudente);
+        return mapToDTO(studente, esami);
+    }
+
+    public List<MateriaDTO> getMaterieConDocenti() {
+        var materie = materiaService.findAll();
+        return materie.stream()
+            .map(materia -> {
+                List<DocenteDTO> docenti = docenteService.findByMateria(materia.getId());
+                return mapToDTO(materia, docenti);
+            })
+            .toList();
+    }
+
+    // mapping privato
+    private StudenteDTO mapToDTO(Studente s, List<Esame> esami) {
+        return StudenteDTO.builder()
+            .id(s.getId())
+            .nomeCompleto(s.getNome() + " " + s.getCognome())
+            .email(s.getEmail())
+            .esami(esami.stream().map(this::mapEsame).toList())
+            .build();
+    }
+
+    private EsameDTO mapEsame(Esame e) {
+        return EsameDTO.builder()
+            .id(e.getId())
+            .voto(e.getVoto())
+            .materia(e.getMateria().getNome())
+            .data(e.getData())
+            .build();
+    }
+
+    private MateriaDTO mapToDTO(Materia m, List<DocenteDTO> docenti) {
+        return MateriaDTO.builder()
+            .id(m.getId())
+            .nome(m.getNome())
+            .docenti(docenti)
+            .build();
+    }
+}
+```
+
+---
+
+## 🧭 E il Controller?
+
+```java
+@Controller
+@RequiredArgsConstructor
+public class StudenteViewController {
+
+    private final CorsoInformaticaFacade corsoFacade;
+
+    @GetMapping("/studenti/{id}/esami")
+    public String viewEsamiStudente(@PathVariable Long id, Model model) {
+        StudenteDTO studenteDTO = corsoFacade.getStudenteConEsami(id);
+        model.addAttribute("studente", studenteDTO);
+        return "esami-studente"; // nome del template Thymeleaf
+    }
+}
+```
+
+---
+
+## 🎯 Vantaggi
+
+| Facade                           | Beneficio                                                  |
+| -------------------------------- | ---------------------------------------------------------- |
+| ✅ Incapsula logica complessa     | Il controller non deve sapere come combinare i dati        |
+| ✅ Rende il controller più pulito | Un solo metodo al posto di 3-4 chiamate a service/mapper   |
+| ✅ Favorisce riuso                | La Facade può essere usata anche da altri controller o API |
+| ✅ Più testabile                  | Puoi testare la Facade in isolamento                       |
+
+---
+
+## 🧪 Esempio completo con la Facade implementata per  `Esame`
+
+Ecco un esempio completo della **vista Esame** nel contesto di una web app per la gestione di un corso di informatica post-diploma, utilizzando:
+
+* DTO
+* Mapper
+* Service
+* DAO (Repository)
+* Pattern Facade
+* Controller (per la view)
+
+---
+
+### ✅ `EsameDto.java`
+
+```java
+@Data
+@Builder
+public class EsameDto {
+    private Long id;
+    private LocalDate data;
+    private Long idStudente;
+    private Long idMateria;
+    private Integer voto;
+}
+```
+
+---
+
+### ✅ `Esame.java` (Entity)
+
+```java
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Esame {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private LocalDate data;
+
+    @ManyToOne
+    private Studente studente;
+
+    @ManyToOne
+    private Materia materia;
+
+    private Integer voto;
+}
+```
+
+---
+
+### ✅ `EsameRepository.java`
+
+```java
+public interface EsameRepository extends JpaRepository<Esame, Long> {
+    List<Esame> findByStudenteId(Long idStudente);
+}
+```
+
+---
+
+### ✅ `EsameService.java`
+
+```java
+@Service
+@RequiredArgsConstructor
+public class EsameService {
+
+    private final EsameRepository esameRepository;
+
+    public List<Esame> getEsami() {
+        return esameRepository.findAll();
+    }
+
+    public Optional<Esame> getEsameById(Long id) {
+        return esameRepository.findById(id);
+    }
+
+    public Esame salvaEsame(Esame esame) {
+        return esameRepository.save(esame);
+    }
+
+    public void eliminaEsame(Long id) {
+        esameRepository.deleteById(id);
+    }
+}
+```
+
+---
+
+### ✅ `EsameFacade.java`
+
+```java
+@Component
+@RequiredArgsConstructor
+public class EsameFacade {
+
+    private final EsameService esameService;
+
+    public List<EsameDto> getAllEsami() {
+        return esameService.getEsami().stream()
+            .map(this::toDto)
+            .collect(Collectors.toList());
+    }
+
+    public EsameDto getEsame(Long id) {
+        return esameService.getEsameById(id)
+            .map(this::toDto)
+            .orElse(null);
+    }
+
+    public EsameDto creaEsame(EsameDto dto) {
+        Esame esame = toEntity(dto);
+        return toDto(esameService.salvaEsame(esame));
+    }
+
+    private EsameDto toDto(Esame e) {
+        return EsameDto.builder()
+            .id(e.getId())
+            .data(e.getData())
+            .idStudente(e.getStudente().getId())
+            .idMateria(e.getMateria().getId())
+            .voto(e.getVoto())
+            .build();
+    }
+
+    private Esame toEntity(EsameDto dto) {
+        Studente s = new Studente(); s.setId(dto.getIdStudente());
+        Materia m = new Materia(); m.setId(dto.getIdMateria());
+
+        return Esame.builder()
+            .id(dto.getId())
+            .data(dto.getData())
+            .studente(s)
+            .materia(m)
+            .voto(dto.getVoto())
+            .build();
+    }
+}
+```
+
+---
+
+### ✅ `EsameController.java`
+
+```java
+@Controller
+@RequiredArgsConstructor
+public class EsameController {
+
+    private final EsameFacade esameFacade;
+
+    @GetMapping("/esami")
+    public String listaEsami(Model model) {
+        model.addAttribute("esami", esameFacade.getAllEsami());
+        return "esami/lista"; // esami/lista.html
+    }
+
+    @GetMapping("/esami/nuovo")
+    public String nuovoEsameForm(Model model) {
+        model.addAttribute("esame", new EsameDto());
+        return "esami/form";
+    }
+
+    @PostMapping("/esami")
+    public String salvaEsame(@ModelAttribute EsameDto esame) {
+        esameFacade.creaEsame(esame);
+        return "redirect:/esami";
+    }
+}
+```
+
+---
+
+### ✅ `esami/lista.html` (Thymeleaf)
+
+```html
+<h2>Lista Esami</h2>
+<a href="/esami/nuovo">Aggiungi Esame</a>
+<table>
+    <tr><th>ID</th><th>Data</th><th>Studente</th><th>Materia</th><th>Voto</th></tr>
+    <tr th:each="esame : ${esami}">
+        <td th:text="${esame.id}"></td>
+        <td th:text="${esame.data}"></td>
+        <td th:text="${esame.idStudente}"></td>
+        <td th:text="${esame.idMateria}"></td>
+        <td th:text="${esame.voto}"></td>
+    </tr>
+</table>
+```
+
+---
+
+### ✅ `esami/form.html`
+
+```html
+<h2>Nuovo Esame</h2>
+<form method="post" action="/esami">
+    <label>Data:</label>
+    <input type="date" name="data"><br>
+    <label>Studente ID:</label>
+    <input type="number" name="idStudente"><br>
+    <label>Materia ID:</label>
+    <input type="number" name="idMateria"><br>
+    <label>Voto:</label>
+    <input type="number" name="voto"><br>
+    <button type="submit">Salva</button>
+</form>
+```
+
+---
+
+[progetto scaricabile](./workspace-spring/spring-corsi/src/main)
