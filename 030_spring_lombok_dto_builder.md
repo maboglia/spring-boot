@@ -1,12 +1,27 @@
+# Progetto Spring MVC completo
+
+- Spring Boot
+  - data-jpa
+  - mysql
+  - dev-tools
+  - web
+  - thymeleaf
+  - lombok
+- Lombok
+- Builder
+- DAO - DTO
+- Facade
+
+---
 
 ![images/programmer/DTO1.png](https://github.com/maboglia/ProgrammingResources/blob/master/images/programmer/DTO1.png?raw=true)
-
-
-Il **progetto Lombok** è una libreria Java open-source che mira a ridurre il **boilerplate code**, cioè il codice ripetitivo e verboso tipico della programmazione Java. Lombok permette di scrivere classi Java più concise e leggibili grazie a **annotazioni** che generano automaticamente metodi comuni come `getters`, `setters`, `equals`, `hashCode`, `toString`, costruttori, builder, e altro ancora.
 
 ---
 
 ### ✅ **Caratteristiche principali di Lombok**
+
+Il **progetto Lombok** è una libreria Java open-source che mira a ridurre il **boilerplate code**, cioè il codice ripetitivo e verboso tipico della programmazione Java. Lombok permette di scrivere classi Java più concise e leggibili grazie a **annotazioni** che generano automaticamente metodi comuni come `getters`, `setters`, `equals`, `hashCode`, `toString`, costruttori, builder, e altro ancora.
+
 
 1. **@Getter e @Setter**
    Generano automaticamente i metodi getter e setter per i campi della classe.
